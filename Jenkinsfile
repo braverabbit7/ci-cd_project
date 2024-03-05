@@ -12,27 +12,26 @@ pipeline {
         stage('Second_stage') {
             steps {
                 sh '''
-                  docker run -d -p 9889:80 --name my-nginx-container my-nginx
+                    docker run -d -p 9889:80 --name my-nginx-container my-nginx
                 '''
             }
         }
         stage('Check 200 code'){
             steps{
                 sh'''
-                # Ожидание запуска контейнера               
-                  sleep 15
-                  bash Check200.sh
+                    # Ожидание запуска контейнера               
+                    sleep 15
+                    bash Check200.sh
                 '''
             }
-        
+        } // закрываем блок stage 'Check 200 code'
+
         stage('MD5 check'){
             steps{
                 sh'''                
-                  bash checkmdm.sh
+                    bash checkmdm.sh
                 '''
             }
-
-        }
-
+        } // закрываем блок stage 'MD5 check'
     }
-}
+} // закрываем блок pipeline
