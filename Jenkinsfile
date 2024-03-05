@@ -18,12 +18,6 @@ pipeline {
                 '''
             }
         }
-        stage('3-rd_stage') {
-            steps {
-                sh '''
-                  echo done
-                '''
-            }
-        }
+
     }
 }
