@@ -33,7 +33,7 @@ pipeline {
                 '''
             }
         } 
-        stage('MD5 check'){
+        stage('Remove container'){
             steps{
                 sh'''                
                     docker rm -f my-nginx-container
