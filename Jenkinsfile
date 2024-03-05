@@ -4,8 +4,9 @@ pipeline {
     stages {
         stage('First_stage') {
             steps {
+                dir('/home/ubuntu')
                 sh '''
-                    docker build --no-cache -t my-nginx:latest .
+                    docker build -t my-nginx:latest .
 
                 '''
             }
