@@ -24,7 +24,7 @@ pipeline {
                     bash Check200.sh
                 '''
             }
-        } // закрываем блок stage 'Check 200 code'
+        } 
 
         stage('MD5 check'){
             steps{
@@ -32,6 +32,13 @@ pipeline {
                     bash checkmdm.sh
                 '''
             }
-        } // закрываем блок stage 'MD5 check'
+        } 
+        stage('MD5 check'){
+            steps{
+                sh'''                
+                    docker rm -f my-nginx-container
+                '''
+            }
+        }
     }
-} // закрываем блок pipeline
+} 
