@@ -21,7 +21,7 @@ pipeline {
                 sh'''
                                   # Ожидание запуска контейнера
                 
-                  sleep 10
+                  sleep 15
 
                 # Проверка кода ответа
                   response=$(curl -s -o /dev/null -w "%{http_code}" http://localhost:9889)
