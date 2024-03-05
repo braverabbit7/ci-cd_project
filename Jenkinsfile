@@ -12,6 +12,7 @@ pipeline {
         stage('Second_stage') {
             steps {
                 sh '''
+                    docker rm -f my-nginx-container
                     docker run -d -p 9889:80 --name my-nginx-container my-nginx
                 '''
             }
