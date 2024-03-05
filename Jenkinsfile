@@ -4,10 +4,8 @@ pipeline {
     stages {
         stage('First_stage') {
             steps {
-                dir('/home/ubuntu')
                 sh '''
                     docker build -t my-nginx:latest .
-
                 '''
             }
         }
