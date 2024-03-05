@@ -5,7 +5,7 @@ pipeline {
         stage('First_stage') {
             steps {
                 sh '''
-                    docker build -t my-nginx:latest .
+                    docker build --no-cache -t my-nginx:latest .
 
                 '''
             }
