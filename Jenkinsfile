@@ -13,9 +13,15 @@ pipeline {
             steps {
                 sh '''
                   docker run -d -p 9889:80 --name my-nginx-container my-nginx
-                  # Ожидание запуска контейнера
+                '''
+            }
+        }
+        stage('Check 200 code'){
+            steps{
+                sh'''
+                                  # Ожидание запуска контейнера
                 
-                  sleep 5
+                  sleep 10
 
                 # Проверка кода ответа
                   response=$(curl -s -o /dev/null -w "%{http_code}" http://localhost:9889)
@@ -31,6 +37,7 @@ pipeline {
                   fi
                 '''
             }
+
         }
 
     }
