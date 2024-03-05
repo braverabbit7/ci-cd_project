@@ -24,6 +24,13 @@ pipeline {
                   bash Check200.sh
                 '''
             }
+        
+        stage('MD5 check'){
+            steps{
+                sh'''                
+                  bash checkmdm.sh
+                '''
+            }
 
         }
 
